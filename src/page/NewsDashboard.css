@@ -1,0 +1,21 @@
+.news-dashboard {
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+.top-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.top-section > * {
+  flex: 1 1 300px;
+  min-width: 300px;
+}
+
+.bottom-section {
+  margin-top: 20px;
+}

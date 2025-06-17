@@ -1,0 +1,30 @@
+.latest-news-container {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  flex: 1;
+}
+
+.latest-news-title {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #222;
+}
+
+.latest-news-item {
+  margin-bottom: 10px;
+}
+
+.latest-news-item a {
+  font-size: 16px;
+  font-weight: 500;
+  color: #007bff;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.latest-news-item a:hover {
+  text-decoration: underline;
+}

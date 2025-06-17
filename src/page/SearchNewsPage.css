@@ -1,0 +1,106 @@
+.search-page {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.search-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #222;
+}
+
+.search-loading {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+}
+
+.search-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.search-item {
+  position: relative; 
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  background-color: #fff;
+}
+
+.search-item:hover {
+  transform: scale(1.01);
+}
+
+.search-item a {
+  font-size: 18px;
+  font-weight: 600;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.search-item a:hover {
+  text-decoration: underline;
+}
+
+.search-description {
+  font-size: 14px;
+  color: #555;
+  margin-top: 8px;
+  line-height: 1.5;
+}
+
+.search-date {
+  font-size: 13px;
+  color: #999;
+  display: block;
+  margin-top: 6px;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+.load-more button {
+  padding: 10px 20px;
+  font-size: 15px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.load-more button:hover {
+  background-color: #0056b3;
+}
+
+.load-more button:disabled {
+  background-color: #ccc;
+  cursor: default;
+}
+
+.no-result {
+  text-align: center;
+  color: #888;
+  margin-top: 20px;
+}
+
+.bookmark-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #f5b800;
+}

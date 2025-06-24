@@ -12,7 +12,6 @@ export default function HotNews() {
     const union = new Set([...setA, ...setB]);
     return intersection.size / union.size;
   };
-
   // ✅ 유사 뉴스 제거 함수
   const removeDuplicateNews = (newsList) => {
     const filtered = [];
@@ -20,7 +19,7 @@ export default function HotNews() {
     for (const item of newsList) {
       const normTitle = item.title
         .replace(/<[^>]*>/g, '')    // HTML 태그 제거
-        .replace(/[\[\]\(\)\.\,\"\·\"\‘\’\'\:\-\s]/g, '') // 특수문자 제거
+        .replace(/[\[\]\(\)\.\,\”\“\"\·\"\‘\’\'\:\-\s]/g, '') // 특수문자 제거
         .toLowerCase();
 
       const isDuplicate = filtered.some(existing => {

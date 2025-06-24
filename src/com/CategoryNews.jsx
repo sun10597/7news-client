@@ -3,8 +3,20 @@ import './CategoryNews.css';
 
 const categories = ["정치", "경제", "사회", "IT", "스포츠", "생활", "문화", "세계"];
 
+const subcategories = {
+  정치: [ "대통령실",  "국회", "외교", "북한"],
+  경제: ["금융", "부동산", "무역", "증권"],
+  사회: ["사건사고", "교육", "노동", "언론"],
+  IT: ["AI", "보안", "모바일", "게임"],
+  스포츠: ["축구", "야구", "농구", "배구"],
+  생활: ["건강", "여행", "음식"],
+  문화: ["영화", "음악", "공연"],
+  세계: ["미국", "중국", "일본"],
+};
+
 export default function CategoryNews() {
   const [selectedCategory, setSelectedCategory] = useState("정치");
+  const [selectedSubcategory, setSelectedSubcategory] = useState("");
   const [articles, setArticles] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -14,7 +26,8 @@ export default function CategoryNews() {
     const fetchCategoryNews = async () => {
       setLoading(true);
       try {
-        const res = await fetch(`https://express-server-tp2f.onrender.com/api/news?query=${selectedCategory}&page=${page}`);
+        const query = selectedSubcategory || selectedCategory;
+        const res = await fetch(`https://express-server-tp2f.onrender.com/api/news?query=${query}&page=${page}`);
         const data = await res.json();
         if (page === 1) {
           setArticles(data);
@@ -27,7 +40,7 @@ export default function CategoryNews() {
       setLoading(false);
     };
     fetchCategoryNews();
-  }, [selectedCategory, page]);
+  }, [selectedCategory, selectedSubcategory, page]);
 
   useEffect(() => {
     const saved = localStorage.getItem("bookmarks");
@@ -62,6 +75,7 @@ export default function CategoryNews() {
             className={cat === selectedCategory ? "active" : ""}
             onClick={() => {
               setSelectedCategory(cat);
+              setSelectedSubcategory("");
               setPage(1);
             }}
           >
@@ -69,6 +83,23 @@ export default function CategoryNews() {
           </button>
         ))}
       </div>
+
+      {subcategories[selectedCategory] && (
+        <div className="subcategory-tabs">
+          {subcategories[selectedCategory].map((sub) => (
+            <button
+              key={sub}
+              className={sub === selectedSubcategory ? "active" : ""}
+              onClick={() => {
+                setSelectedSubcategory(sub);
+                setPage(1);
+              }}
+            >
+              {sub}
+            </button>
+          ))}
+        </div>
+      )}
 
       <div className="news-list">
         {articles.map((article, index) => (

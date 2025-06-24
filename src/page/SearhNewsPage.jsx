@@ -1,8 +1,11 @@
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import './SearchNewsPage.css';
+import usePageTitle from "../hooks/usePageTitle";
 
 export default function SearchNewsPage() {
+  usePageTitle("🔍 검색");
+
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const keyword = params.get("query");

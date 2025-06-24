@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import './RecentPage.css';
+import usePageTitle from "../hooks/usePageTitle";
 
 export default function RecentPage() {
+  usePageTitle("🕘 최근 본 뉴스");
+  
   const [recent, setRecent] = useState([]);
 
   useEffect(() => {

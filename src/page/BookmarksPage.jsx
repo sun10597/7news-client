@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import './BookmarksPage.css';
+import usePageTitle from "../hooks/usePageTitle";
 
 export default function BookmarksPage() {
+  usePageTitle("⭐ 즐겨찾기");
+
   const [bookmarks, setBookmarks] = useState([]);
 
   useEffect(() => {

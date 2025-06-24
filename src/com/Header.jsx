@@ -57,7 +57,7 @@ export default function Header() {
     const mock = {
       city: "서울",
       temp: 25,
-      icon: "🌤️",
+      icon: "🌧️",
     };
     setWeather(mock);
   }, []);

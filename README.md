@@ -53,4 +53,3 @@ React와 Vite를 활용해
 ## 🔗 Links
 
 - **Live Demo**: https://7news-client.vercel.app/  
-- **GitHub**: https://github.com/sun10597/7news-client
